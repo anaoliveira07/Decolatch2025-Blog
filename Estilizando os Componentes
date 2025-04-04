@@ -1,0 +1,60 @@
+/* Estilos Globais (src/styles.css) */
+/* Aqui vamos adicionar alguns estilos globais para o blog. */
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.big-card, .small-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin: 10px 0;
+}
+
+.read-more {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.content-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Estilos do Componente Big Card (big-card.component.css) */
+
+.big-card {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos do Componente Small Card (small-card.component.css) */
+
+.small-card {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 10px;
+}
