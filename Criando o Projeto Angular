@@ -1,0 +1,7 @@
+ng new angular-blog
+cd angular-blog
+
+ng generate component menu
+ng generate component big-card
+ng generate component small-card
+ng generate component content-page
