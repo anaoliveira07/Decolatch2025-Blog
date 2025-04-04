@@ -1,0 +1,94 @@
+//Componente Menu (menu.component.html)
+//Esse componente será responsável por criar o menu de navegação do seu blog.
+
+html
+Copiar
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">Sobre</a></li>
+    <li><a href="/contact">Contato</a></li>
+  </ul>
+</nav>
+
+//Componente Big Card (big-card.component.html)
+//Este componente exibirá os posts em destaque.
+
+html
+Copiar
+<div class="big-card">
+  <h2>{{ title }}</h2>
+  <p>{{ description }}</p>
+  <a href="#" class="read-more">Leia mais...</a>
+</div>
+
+//Componente Big Card (big-card.component.ts)
+
+typescript
+Copiar
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-big-card',
+  templateUrl: './big-card.component.html',
+  styleUrls: ['./big-card.component.css']
+})
+export class BigCardComponent {
+  @Input() title: string = '';
+  @Input() description: string = '';
+}
+
+//Componente Small Card (small-card.component.html)
+//Este componente exibirá uma versão resumida dos posts.
+
+html
+Copiar
+<div class="small-card">
+  <h3>{{ title }}</h3>
+  <p>{{ excerpt }}</p>
+  <a href="#" class="read-more">Leia mais...</a>
+</div>
+
+//Componente Small Card (small-card.component.ts)
+
+typescript
+Copiar
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-small-card',
+  templateUrl: './small-card.component.html',
+  styleUrls: ['./small-card.component.css']
+})
+export class SmallCardComponent {
+  @Input() title: string = '';
+  @Input() excerpt: string = '';
+}
+
+//Componente Content Page (content-page.component.html)
+//Esse componente será responsável por listar os posts no layout da página principal.
+
+html
+Copiar
+<div class="content-page">
+  <app-big-card *ngFor="let post of posts" [title]="post.title" [description]="post.description"></app-big-card>
+</div>
+
+//Componente Content Page (content-page.component.ts)
+
+typescript
+Copiar
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-content-page',
+  templateUrl: './content-page.component.html',
+  styleUrls: ['./content-page.component.css']
+})
+export class ContentPageComponent {
+  posts = [
+    { title: 'Post 1', description: 'Descrição do post 1' },
+    { title: 'Post 2', description: 'Descrição do post 2' },
+    { title: 'Post 3', description: 'Descrição do post 3' }
+  ];
+}
