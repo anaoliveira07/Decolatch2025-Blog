@@ -1,8 +1,7 @@
 //Componente Menu (menu.component.html)
 //Esse componente será responsável por criar o menu de navegação do seu blog.
 
-html
-Copiar
+
 <nav>
   <ul>
     <li><a href="/">Home</a></li>
@@ -14,8 +13,7 @@ Copiar
 //Componente Big Card (big-card.component.html)
 //Este componente exibirá os posts em destaque.
 
-html
-Copiar
+
 <div class="big-card">
   <h2>{{ title }}</h2>
   <p>{{ description }}</p>
@@ -24,8 +22,7 @@ Copiar
 
 //Componente Big Card (big-card.component.ts)
 
-typescript
-Copiar
+
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -41,8 +38,7 @@ export class BigCardComponent {
 //Componente Small Card (small-card.component.html)
 //Este componente exibirá uma versão resumida dos posts.
 
-html
-Copiar
+
 <div class="small-card">
   <h3>{{ title }}</h3>
   <p>{{ excerpt }}</p>
@@ -51,8 +47,7 @@ Copiar
 
 //Componente Small Card (small-card.component.ts)
 
-typescript
-Copiar
+
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -68,16 +63,14 @@ export class SmallCardComponent {
 //Componente Content Page (content-page.component.html)
 //Esse componente será responsável por listar os posts no layout da página principal.
 
-html
-Copiar
+
 <div class="content-page">
   <app-big-card *ngFor="let post of posts" [title]="post.title" [description]="post.description"></app-big-card>
 </div>
 
 //Componente Content Page (content-page.component.ts)
 
-typescript
-Copiar
+
 import { Component } from '@angular/core';
 
 @Component({
